@@ -2,6 +2,7 @@ package: github.com/appscode/go
 import:
 - package: github.com/cenkalti/backoff
   version: v1.0.0
+- package: github.com/flosch/pongo2
 - package: github.com/ghodss/yaml
 - package: github.com/google/go-querystring
 - package: github.com/mikespook/golib
