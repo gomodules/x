@@ -5,6 +5,7 @@ import:
 - package: github.com/codeskyblue/go-sh
   version: v0.1
 - package: github.com/flosch/pongo2
+  version: 22499f94d3d56c7238591344a6902715d0b8fbbf
 - package: github.com/ghodss/yaml
 - package: github.com/google/go-querystring
 - package: github.com/mikespook/golib
