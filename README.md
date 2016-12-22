@@ -1,2 +1,12 @@
 # go
 Ensemble of GOlang libraries used by AppsCode
+
+## Policy for adding new libs:
+ * If codebase produces exe or needs vendoring, the live in their own top level repo.
+ * appscode/go is our kitchen sink go lib repo. This must not use vendor. We do not accept contribution in /go repo,
+  since they have wide ranging effect. This does not use log (glog transitively), since that will require vendoring.
+   This also uses official errors pkg, to avoid facebookgo/stack dependency.
+ * If we want external contribution, probably needs their own repo.
+
+## License
+This is licensed under Apache 2.0 unless specified in the individual code files.
