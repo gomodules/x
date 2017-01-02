@@ -86,7 +86,7 @@ func FromString(e string) Environment {
 	case "dev":
 		return Dev
 	default:
-		if inCluster() {
+		if InCluster() {
 			return Prod
 		} else {
 			return Dev
@@ -96,7 +96,7 @@ func FromString(e string) Environment {
 
 // Possible returns true if loading an inside-kubernetes-cluster is possible.
 // ref: https://goo.gl/mrlLyr
-func inCluster() bool {
+func InCluster() bool {
 	fi, err := os.Stat("/var/run/secrets/kubernetes.io/serviceaccount/token")
 	return os.Getenv("KUBERNETES_SERVICE_HOST") != "" &&
 		os.Getenv("KUBERNETES_SERVICE_PORT") != "" &&
