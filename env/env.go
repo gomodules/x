@@ -2,6 +2,7 @@ package env
 
 import (
 	"errors"
+	"fmt"
 	"os"
 	"strings"
 )
@@ -51,6 +52,17 @@ func (e Environment) DebugEnabled() bool {
 
 func (e Environment) DevMode() bool {
 	return e == Dev || e == BoxDev
+}
+
+func (e Environment) APIServer() (string, error) {
+	switch e {
+	case Prod:
+		return ProdApiServer, nil
+	case QA:
+		return QAApiServer, nil
+	default:
+		return "", fmt.Errorf("apiserver unknown for env %v", e)
+	}
 }
 
 func (e Environment) String() string {
