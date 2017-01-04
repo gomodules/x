@@ -10,10 +10,10 @@ type DebianRepo struct {
 // https://repo.saltstack.com/#debian
 var DebianRepos map[string]DebianRepo = map[string]DebianRepo{
 	// Debian Jessie
-	"saltstack-2016.11.0-debian-8": {
+	"saltstack-2016.11.1-debian-8": {
 		Listing:   "/etc/apt/sources.list.d/saltstack.list",
-		Deb:       "deb http://repo.saltstack.com/apt/debian/8/amd64/archive/2016.11.0 jessie main",
-		GPGKeyURL: "https://repo.saltstack.com/apt/debian/8/amd64/archive/2016.11.0/SALTSTACK-GPG-KEY.pub",
+		Deb:       "deb http://repo.saltstack.com/apt/debian/8/amd64/archive/2016.11.1 jessie main",
+		GPGKeyURL: "https://repo.saltstack.com/apt/debian/8/amd64/archive/2016.11.1/SALTSTACK-GPG-KEY.pub",
 	},
 	"saltstack-2015.8.8-debian-8": {
 		Listing:   "/etc/apt/sources.list.d/saltstack.list",
@@ -21,10 +21,10 @@ var DebianRepos map[string]DebianRepo = map[string]DebianRepo{
 		GPGKeyURL: "https://repo.saltstack.com/apt/debian/8/amd64/archive/2015.8.8/SALTSTACK-GPG-KEY.pub",
 	},
 	// Ubuntu
-	"saltstack-2016.11.0-ubuntu-16.04": {
+	"saltstack-2016.11.1-ubuntu-16.04": {
 		Listing:   "/etc/apt/sources.list.d/saltstack.list",
-		Deb:       "deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/archive/2016.11.0 xenial main",
-		GPGKeyURL: "https://repo.saltstack.com/apt/ubuntu/16.04/amd64/archive/2016.11.0/SALTSTACK-GPG-KEY.pub",
+		Deb:       "deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/archive/2016.11.1 xenial main",
+		GPGKeyURL: "https://repo.saltstack.com/apt/ubuntu/16.04/amd64/archive/2016.11.1/SALTSTACK-GPG-KEY.pub",
 	},
 	"saltstack-2015.8-ubuntu-14.04": {
 		Listing:   "/etc/apt/sources.list.d/saltstack.list",
@@ -40,7 +40,7 @@ var DebianRepos map[string]DebianRepo = map[string]DebianRepo{
 
 var (
 	DefaultSaltstackVersion = map[string]string{
-		"debian": "saltstack-2016.11.0-debian-8",
-		"ubuntu": "saltstack-2016.11.0-ubuntu-16.04",
+		"debian": "saltstack-2016.11.1-debian-8",
+		"ubuntu": "saltstack-2016.11.1-ubuntu-16.04",
 	}
 )
