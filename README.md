@@ -11,4 +11,4 @@ Ensemble of GOlang libraries used by AppsCode
  * If we want external contribution, those stuff need their own repo.
 
 ## License
-This is licensed under Apache 2.0 unless specified in the individual code files.
+This is licensed under Apache 2.0 unless specified otherwise in individual code files.
