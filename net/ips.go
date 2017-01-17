@@ -3,7 +3,7 @@ package net
 import (
 	"bytes"
 	"net"
-	"strings"
+	"regexp"
 )
 
 type IPRange struct {
@@ -30,6 +30,10 @@ func IsPrivateIP(ip net.IP) bool {
 	return false
 }
 
+var (
+	knownLocalBridges = regexp.MustCompile(`^(docker|cbr|cni)[0-9]+$`)
+)
+
 func routableIPs() []net.IP {
 	result := make([]net.IP, 0, 2)
 	ifaces, err := net.Interfaces()
@@ -43,9 +47,7 @@ func routableIPs() []net.IP {
 		if iface.Flags&net.FlagLoopback != 0 {
 			continue // loopback interface
 		}
-		if strings.HasPrefix(iface.Name, "docker") ||
-			strings.HasPrefix(iface.Name, "cbr") ||
-			strings.HasPrefix(iface.Name, "cni") {
+		if knownLocalBridges.MatchString(iface.Name) {
 			continue
 		}
 		addrs, err := iface.Addrs()
