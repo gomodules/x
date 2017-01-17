@@ -43,7 +43,9 @@ func routableIPs() []net.IP {
 		if iface.Flags&net.FlagLoopback != 0 {
 			continue // loopback interface
 		}
-		if strings.HasPrefix(iface.Name, "docker") {
+		if strings.HasPrefix(iface.Name, "docker") ||
+			strings.HasPrefix(iface.Name, "cbr") ||
+			strings.HasPrefix(iface.Name, "cni") {
 			continue
 		}
 		addrs, err := iface.Addrs()
