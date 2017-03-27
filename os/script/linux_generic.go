@@ -59,7 +59,7 @@ func (script *LinuxGeneric) Chmod(name string, mode os.FileMode) {
 }
 
 func (script *LinuxGeneric) Symlink(oldname, newname string) {
-	if err := os.Symlink(oldname, newname); err != nil {
+	if err := script.shell.Command("ln", "-sf", oldname, newname).Run(); err != nil {
 		log.Fatal(err)
 	}
 }
