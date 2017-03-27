@@ -46,7 +46,4 @@ type Script interface {
 
 	InstallSaltMaster(versions ...string)
 	InstallSaltMinion(versions ...string)
-
-	HttpGet(url string, headers map[string]string) (string, error)
-	HttpPut(url, body string, headers map[string]string) (string, error)
 }

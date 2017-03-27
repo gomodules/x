@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"net/http"
 	"os"
 	"regexp"
 	"strings"
@@ -189,50 +188,3 @@ func (script *LinuxGeneric) ProcessRestart(ps ...string) {
 func (script *LinuxGeneric) DeactivateDaemons() {}
 
 func (script *LinuxGeneric) ActivateDaemons() {}
-
-// https://github.com/DaddyOh/golang-samples/blob/master/httpClient.go
-func (script *LinuxGeneric) HttpGet(url string, headers map[string]string) (string, error) {
-	// resp, err := http.Get(url)
-	client := &http.Client{}
-	req, err := http.NewRequest("GET", url, nil)
-	if err != nil {
-		return "", err
-	}
-	for k, v := range headers {
-		req.Header.Add(k, v)
-	}
-	resp, err := client.Do(req)
-	if err != nil {
-		log.Print(err)
-		return "", err
-	}
-	defer resp.Body.Close()
-	contents, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		log.Print(err)
-		return "", err
-	}
-	return string(contents), nil
-}
-
-func (script *LinuxGeneric) HttpPut(url, body string, headers map[string]string) (string, error) {
-	client := &http.Client{}
-	req, err := http.NewRequest("PUT", url, strings.NewReader(body))
-	if err != nil {
-		return "", err
-	}
-	if headers != nil {
-		for k, v := range headers {
-			req.Header.Add(k, v)
-		}
-	}
-	req.ContentLength = int64(len(body))
-	resp, err := client.Do(req)
-	if err != nil {
-		log.Print(err)
-		return "", err
-	}
-	defer resp.Body.Close()
-	contents, err := ioutil.ReadAll(resp.Body)
-	return string(contents), nil
-}
