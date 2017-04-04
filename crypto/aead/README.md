@@ -1,9 +1,9 @@
-####Used Method: 
+# Used Method: 
    AESGCM
    - AES 256 for encryption
    - SHA 256 for HMAC/authentication
             
-####The process is like this
+# Process:
    Encryption   
     - encrypt the data using aes.  
     - compute hash  
@@ -14,7 +14,7 @@
     - if data is not authentic return  
     - decrypt the data.
 
-####Reading materials
+# Reading materials
   1. [StackExchange](http://security.stackexchange.com/a/65645)
   2. [GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode)
   3. [RFC5288 AES_GCM](https://tools.ietf.org/html/rfc5288#page-2)
@@ -26,7 +26,7 @@
   
   **Language Specific Implementations are described in the {lang}-impl/README.md**
 
-##Key Generation
+## Key Generation
 Currently the key generation process is simple. we need 32bytes (256bits) of key to encrypt the data.
 so if the key length is smaller then 32 we are appending the key in an circular approach until
 the key is 32bytes. So a key of `ABCD` will become `ABCDABCDABCDABCDABCDABCDABCDABCD`.
@@ -63,7 +63,7 @@ for extra bit of protection.*
   - while decrypting find the nonce first from the data.
   - use this nonce to the generate decrypted text.
 
-##Notes/Development Guide
+## Notes/Development Guide
   - Encrypted bytes are converted to Base64 String before return.
   - Before Decrypting use Base64 decoder to decode the string to Bytes.
   - Use the test_data data to test the implementation against.
