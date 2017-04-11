@@ -25,7 +25,7 @@ func (j *JsonMap) Default() []byte {
 func (j *JsonMap) String() string {
 	bytes, err := j.ToDB()
 	if err != nil {
-		return ""
+		return string(j.Default())
 	}
 	return string(bytes)
 }
