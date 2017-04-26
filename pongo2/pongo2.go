@@ -6,6 +6,20 @@ import (
 	p "github.com/flosch/pongo2"
 )
 
+func ViaJson(v interface{}) (p.Context, error) {
+	data, err := json.Marshal(v)
+	if err != nil {
+		return p.Context{}, err
+	}
+
+	ptx := p.Context{}
+	err = json.Unmarshal(data, &ptx)
+	if err != nil {
+		return p.Context{}, err
+	}
+	return ptx, nil
+}
+
 func YAMLSafeContext(v interface{}) (*p.Context, error) {
 	data, err := json.Marshal(v)
 	if err != nil {
