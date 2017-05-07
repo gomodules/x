@@ -2,8 +2,9 @@ package pongo2
 
 import (
 	"fmt"
-	p "github.com/flosch/pongo2"
 	"testing"
+
+	p "github.com/flosch/pongo2"
 )
 
 func TestViaJson(t *testing.T) {

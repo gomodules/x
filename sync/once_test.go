@@ -1,4 +1,4 @@
-package ok_test
+package sync_test
 
 import (
 	"testing"

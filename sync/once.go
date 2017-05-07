@@ -1,13 +1,13 @@
-package ok
+package sync
 
 import (
-	"sync"
+	gsync "sync"
 	"sync/atomic"
 )
 
 // Once is an object that will perform exactly one action.
 type Once struct {
-	m    sync.Mutex
+	m    gsync.Mutex
 	done int32
 }
 
