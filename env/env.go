@@ -92,8 +92,6 @@ func FromString(e string) Environment {
 		return Onebox
 	case "qa":
 		return QA
-	case "boxdev":
-		return BoxDev
 	case "dev":
 		return Dev
 	default:
