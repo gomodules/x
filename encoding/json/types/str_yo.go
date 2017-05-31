@@ -1,6 +1,7 @@
 package types
 
 import (
+	"bytes"
 	"encoding/json"
 	"errors"
 	"unicode/utf8"
@@ -29,6 +30,9 @@ func (m *StrYo) UnmarshalJSON(data []byte) error {
 		return errors.New("jsontypes.StrYo: Expected string, found object")
 	} else if data[0] == '[' {
 		return errors.New("jsontypes.StrYo: Expected string, found array")
+	} else if bytes.Equal(data, []byte("null")) {
+		*m = ""
+		return nil
 	}
 	d := string(data)
 	if utf8.ValidString(d) {

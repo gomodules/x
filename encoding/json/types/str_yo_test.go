@@ -19,13 +19,15 @@ func TestStrYo(t *testing.T) {
 		C StrYo
 		D StrYo
 		E StrYo
+		F StrYo `json:",omitempty"`
 	}
 	s := `{
 		"A": "str\\",
 		"B": 1,
 		"C": 2.5,
 		"D": false,
-		"E": true
+		"E": true,
+		"F": null
 	}`
 
 	var e Example
@@ -33,9 +35,6 @@ func TestStrYo(t *testing.T) {
 
 	assert.Nil(err)
 	b, err := json.Marshal(&e)
-
-	fmt.Println(e.A)
-
 	fmt.Println(string(b))
 	assert.Equal(`{"A":"str\\","B":"1","C":"2.5","D":"false","E":"true"}`, string(b))
 }
