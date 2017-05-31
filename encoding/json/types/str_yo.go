@@ -6,8 +6,8 @@ import (
 )
 
 /*
-StrYo turns non-strings into into a string by adding quotes around it into bool when marshaled to Json. If input is already
-string, no change is done.
+StrYo turns non-strings into into a string by adding quotes around it into bool,
+when marshaled to Json. If input is already string, no change is done.
 */
 type StrYo string
 
