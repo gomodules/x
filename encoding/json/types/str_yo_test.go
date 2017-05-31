@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
+	"fmt"
+
 	. "github.com/appscode/go/encoding/json/types"
 	"github.com/stretchr/testify/assert"
 )
@@ -19,7 +21,7 @@ func TestStrYo(t *testing.T) {
 		E StrYo
 	}
 	s := `{
-		"A": "str",
+		"A": "str\\",
 		"B": 1,
 		"C": 2.5,
 		"D": false,
@@ -31,5 +33,9 @@ func TestStrYo(t *testing.T) {
 
 	assert.Nil(err)
 	b, err := json.Marshal(&e)
-	assert.Equal(`{"A":"str","B":"1","C":"2.5","D":"false","E":"true"}`, string(b))
+
+	fmt.Println(e.A)
+
+	fmt.Println(string(b))
+	assert.Equal(`{"A":"str\\","B":"1","C":"2.5","D":"false","E":"true"}`, string(b))
 }
