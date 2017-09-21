@@ -1,7 +1,7 @@
 package log
 
 import (
-	"github.com/appscode/log"
+	"github.com/appscode/go/log"
 )
 
 type LogHandler struct{}

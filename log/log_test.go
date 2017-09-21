@@ -2,7 +2,7 @@ package log_test
 
 import (
 	"flag"
-	alog "github.com/appscode/log"
+	alog "github.com/appscode/go/log"
 	"github.com/golang/glog"
 	"testing"
 )
