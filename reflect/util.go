@@ -6,7 +6,7 @@ import r "reflect"
 func IsZero(i interface{}) bool {
 	v := r.ValueOf(i)
 	switch v.Kind() {
-	case r.Func, r.Map, r.Slice:
+	case r.Func, r.Map, r.Slice, r.Ptr:
 		return v.IsNil()
 	case r.Array:
 		z := true
