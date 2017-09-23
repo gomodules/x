@@ -3,7 +3,8 @@ package reflect
 import r "reflect"
 
 // https://stackoverflow.com/a/23555352/244009
-func IsZero(v r.Value) bool {
+func IsZero(i interface{}) bool {
+	v := r.ValueOf(i)
 	switch v.Kind() {
 	case r.Func, r.Map, r.Slice:
 		return v.IsNil()
