@@ -7,7 +7,7 @@ import (
 
 type keyID struct{}
 
-func New() gtx.Context {
+func Background() gtx.Context {
 	return gtx.WithValue(gtx.Background(), keyID{}, uuid.New().String())
 }
 
