@@ -1,4 +1,4 @@
-#log
+# log
 
 Simple [golang/glog](https://github.com/golang/glog) wrapper to works with contextual logs.
 
