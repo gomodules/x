@@ -13,7 +13,6 @@ import (
 	"strings"
 
 	"github.com/appscode/go/errors"
-	"github.com/appscode/go/log"
 	"golang.org/x/crypto/ssh"
 )
 
@@ -36,7 +35,6 @@ type SSHKey struct {
 // From PRIV key: openssl rsa -in ~/.ssh/id_rsa -pubout -outform DER | openssl md5 -c
 //
 func NewSSHKeyPair() (*SSHKey, error) {
-	log.Debugln("generating ssh key")
 	rsaKey, err := rsa.GenerateKey(rand.Reader, RSABitSize)
 	if err != nil {
 		return nil, errors.FromErr(err).Err()
