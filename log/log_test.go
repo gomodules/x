@@ -26,3 +26,9 @@ func BenchmarkGLog(b *testing.B) {
 		glog.Infoln(data)
 	}
 }
+
+func TestInfof(t *testing.T) {
+	flag.Set("stderrthreshold", "INFO")
+	// flag.Set("logtostderr", "true")
+	alog.Infof("id: %s data: %s", "hello", "world")
+}
