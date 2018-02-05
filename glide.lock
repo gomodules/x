@@ -1,5 +1,5 @@
-hash: f752ec921cefab8d637340e99cd5b55456a19074c8e2d3cad046d8d8e3ac8461
-updated: 2018-01-10T22:17:20.631846304-08:00
+hash: 23ee722e3688a64a756631c7013761611c41ab25afc1a3d93cca5160b83784d5
+updated: 2018-02-05T01:26:44.654772246-08:00
 imports:
 - name: github.com/beevik/ntp
   version: 802074b1b037c59dbdbee7e196ad91b51d0ec844
@@ -15,12 +15,14 @@ imports:
   version: 9aae6aaa22315390f03959adca2c4d395b02fcef
 - name: github.com/flosch/pongo2
   version: 1f4be1efe3b3529b7e58861f75d70120a9567dc4
+- name: github.com/fsnotify/fsnotify
+  version: c2828203cd70a50dcccfb2761f8b1f8ceef9a8e9
 - name: github.com/ghodss/yaml
   version: 0ca9ea5df5451ffdf184b4428c902747c2c11cd7
 - name: github.com/golang/glog
   version: 44145f04b68cf362d9c4df2182967c2275eaefed
 - name: github.com/golang/protobuf
-  version: 6e4cc92cc905d5f4a73041c1b8228ea08f4c6147
+  version: 1643683e1b54a9e88ad26d98f81400c8c9d9f4f9
   subpackages:
   - jsonpb
   - proto
@@ -50,7 +52,7 @@ imports:
   - idgen
   - signal
 - name: github.com/spf13/cobra
-  version: b95ab734e27d33e0d8fbabf71ca990568d4e2020
+  version: eb589833591a36b5720108a621baab8dee9b2ac5
 - name: github.com/spf13/pflag
   version: e57e3eeb33f795204c1ca35f56c44f83227c6e66
 - name: golang.org/x/crypto
@@ -70,7 +72,7 @@ imports:
   - internal/socket
   - ipv4
 - name: golang.org/x/sys
-  version: 7ddbeae9ae08c6a06a59597f0c9edbc5ff2444ce
+  version: 95c6576299259db960f6c5b9b69ea52422860fce
   subpackages:
   - unix
   - windows
