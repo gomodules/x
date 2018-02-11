@@ -1,3 +1,9 @@
+This package is considered deprecated. New code should use https://github.com/pkg/errors . To learn more, visit: https://github.com/pkg/errors
+
+- Tamal
+
+---------------------------------------------------------------
+
 # errors
 Package errors provides detailed error types, and context support on top of go error.
 
