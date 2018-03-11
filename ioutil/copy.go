@@ -114,7 +114,7 @@ func CopyDir(dst, src string) (err error) {
 		dstPath := filepath.Join(dst, entry.Name())
 
 		if entry.IsDir() {
-			err = CopyDir(srcPath, dstPath)
+			err = CopyDir(dstPath, srcPath)
 			if err != nil {
 				return
 			}
@@ -124,7 +124,7 @@ func CopyDir(dst, src string) (err error) {
 				continue
 			}
 
-			err = CopyFile(srcPath, dstPath)
+			err = CopyFile(dstPath, srcPath)
 			if err != nil {
 				return
 			}
