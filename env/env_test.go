@@ -18,11 +18,6 @@ func TestDetectFromHostOnebox(t *testing.T) {
 	assert.Equal(t, env.Onebox, env.FromHost())
 }
 
-func TestDetectFromHostBoxDev(t *testing.T) {
-	os.Setenv(env.Key, env.BoxDev.String())
-	assert.Equal(t, env.BoxDev, env.FromHost())
-}
-
 func TestDetectFromHostQA(t *testing.T) {
 	os.Setenv(env.Key, env.QA.String())
 	assert.Equal(t, env.QA, env.FromHost())

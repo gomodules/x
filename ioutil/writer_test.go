@@ -266,7 +266,7 @@ IAAAAAAAsDyZDwU=`
 		}
 
 		writer := &AtomicWriter{targetDir: targetDir}
-		err = writer.Write(tc.payload)
+		_, err = writer.Write(tc.payload)
 		if err != nil && tc.success {
 			t.Errorf("%v: unexpected error writing payload: %v", tc.name, err)
 			continue
@@ -442,7 +442,7 @@ func TestUpdate(t *testing.T) {
 
 		writer := &AtomicWriter{targetDir: targetDir}
 
-		err = writer.Write(tc.first)
+		_, err = writer.Write(tc.first)
 		if err != nil {
 			t.Errorf("%v: unexpected error writing: %v", tc.name, err)
 			continue
@@ -453,7 +453,7 @@ func TestUpdate(t *testing.T) {
 			continue
 		}
 
-		err = writer.Write(tc.next)
+		_, err = writer.Write(tc.next)
 		if err != nil {
 			if tc.shouldWrite {
 				t.Errorf("%v: unexpected error writing: %v", tc.name, err)
