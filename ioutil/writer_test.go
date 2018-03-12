@@ -506,7 +506,7 @@ func checkVolumeContents(targetDir, tcName string, payload map[string]FileProjec
 	}
 	if !reflect.DeepEqual(cleanPathPayload, observedPayload) {
 		t.Errorf("%v: payload and observed payload do not match.", tcName)
-		t.Errorf("Expected %s;\nGot %s\n", cleanPathPayload, observedPayload)
+		t.Errorf("Expected %+v;\nGot %+v\n", cleanPathPayload, observedPayload)
 		t.Errorf("%s", string(debug.Stack()))
 	}
 }
