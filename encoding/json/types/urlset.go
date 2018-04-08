@@ -2,6 +2,7 @@ package types
 
 import (
 	"errors"
+	"fmt"
 	"net/url"
 	"sort"
 	"strconv"
@@ -69,7 +70,10 @@ func (us *URLSet) UnmarshalJSON(data []byte) error {
 	}
 
 	n := len(data)
-	if n <= 2 {
+	if n < 2 {
+		return fmt.Errorf("jsontypes.URLSet: UnmarshalJSON on invalid data %s", string(data))
+	}
+	if n == 2 && string(data) == `""` {
 		return nil
 	}
 	us.Hosts = sets.NewString()

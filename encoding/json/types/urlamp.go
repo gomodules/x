@@ -2,12 +2,12 @@ package types
 
 import (
 	"errors"
+	"fmt"
 	"net/url"
+	"reflect"
 	"sort"
 	"strconv"
 	"strings"
-
-	"reflect"
 )
 
 type URLMap struct {
@@ -78,7 +78,10 @@ func (um *URLMap) UnmarshalJSON(data []byte) error {
 	}
 
 	n := len(data)
-	if n <= 2 {
+	if n < 2 {
+		return fmt.Errorf("jsontypes.URLMap: UnmarshalJSON on invalid data %s", string(data))
+	}
+	if n == 2 && string(data) == `""` {
 		return nil
 	}
 	um.Hosts = map[string]string{}
