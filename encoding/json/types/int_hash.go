@@ -65,11 +65,11 @@ func parseStringIntoIntHash(s string) (*IntHash, error) {
 	}
 }
 
-func NewIntHash(i int64, h string) IntHash { return IntHash{generation: i, hash: h} }
+func NewIntHash(i int64, h string) *IntHash { return &IntHash{generation: i, hash: h} }
 
-func IntHashForGeneration(i int64) IntHash { return IntHash{generation: i} }
+func IntHashForGeneration(i int64) *IntHash { return &IntHash{generation: i} }
 
-func IntHashForHash(h string) IntHash { return IntHash{hash: h} }
+func IntHashForHash(h string) *IntHash { return &IntHash{hash: h} }
 
 func (m IntHash) Generation() int64 {
 	return m.generation
@@ -107,12 +107,12 @@ func (m *IntHash) DeepCopyInto(out *IntHash) {
 	*out = *m
 }
 
-func (in *IntHash) DeepCopy() *IntHash {
-	if in == nil {
+func (m *IntHash) DeepCopy() *IntHash {
+	if m == nil {
 		return nil
 	}
 	out := new(IntHash)
-	in.DeepCopyInto(out)
+	m.DeepCopyInto(out)
 	return out
 }
 
@@ -164,11 +164,11 @@ func (m *IntHash) UnmarshalJSON(data []byte) error {
 // the OpenAPI spec of this type.
 //
 // See: https://github.com/kubernetes/kube-openapi/tree/master/pkg/generators
-func (m IntHash) OpenAPISchemaType() []string { return []string{"string"} }
+func (_ IntHash) OpenAPISchemaType() []string { return []string{"string"} }
 
 // OpenAPISchemaFormat is used by the kube-openapi generator when constructing
 // the OpenAPI spec of this type.
-func (m IntHash) OpenAPISchemaFormat() string { return "" }
+func (_ IntHash) OpenAPISchemaFormat() string { return "" }
 
 // MarshalQueryParameter converts to a URL query parameter value
 func (m IntHash) MarshalQueryParameter() (string, error) {
