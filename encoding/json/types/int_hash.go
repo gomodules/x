@@ -20,6 +20,8 @@ type IntHash struct {
 
 func ParseIntHash(v interface{}) (*IntHash, error) {
 	switch m := v.(type) {
+	case nil:
+		return &IntHash{}, nil
 	case int:
 		return &IntHash{generation: int64(m)}, nil
 	case int64:
