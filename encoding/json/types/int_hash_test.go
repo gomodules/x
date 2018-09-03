@@ -12,7 +12,7 @@ func TestIntHash_Empty(t *testing.T) {
 	assert := assert.New(t)
 
 	var x IntHash
-	err := x.UnmarshalJSON([]byte(`"5$ty"`))
+	err := x.UnmarshalJSON([]byte(`""`))
 	assert.Nil(err)
 }
 
@@ -26,6 +26,7 @@ func TestIntHash(t *testing.T) {
 		D IntHash
 		E *IntHash
 		F *IntHash `json:",omitempty"`
+		G IntHash
 	}
 	s := `{
 		"A": "0$str\\",
@@ -40,5 +41,5 @@ func TestIntHash(t *testing.T) {
 
 	b, err := json.Marshal(&e)
 	assert.Nil(err)
-	assert.Equal(`{"A":"0$str\\","B":1,"C":"8$xyz","D":0,"E":null}`, string(b))
+	assert.Equal(`{"A":"0$str\\","B":1,"C":"8$xyz","D":0,"E":null,"G":0}`, string(b))
 }

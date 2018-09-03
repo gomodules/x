@@ -18,6 +18,10 @@ type IntHash struct {
 }
 
 func ParseIntHash(s string) (*IntHash, error) {
+	if s == "" {
+		return &IntHash{}, nil
+	}
+
 	idx := strings.IndexRune(s, '$')
 	switch {
 	case idx <= 0:
