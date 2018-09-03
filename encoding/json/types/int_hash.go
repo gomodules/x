@@ -10,8 +10,7 @@ import (
 )
 
 /*
-IntHash turns non-strings into into a string by adding quotes around it into bool,
-when marshaled to Json. If input is already string, no change is done.
+IntHash represents as int64 Generation and string Hash. It is json serialized into <int64>$<hash_string>.
 */
 type IntHash struct {
 	generation int64
