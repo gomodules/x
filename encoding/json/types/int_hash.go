@@ -13,6 +13,7 @@ import (
 /*
 IntHash represents as int64 Generation and string Hash. It is json serialized into <int64>$<hash_string>.
 */
+// +k8s:openapi-gen=true
 type IntHash struct {
 	generation int64
 	hash       string
