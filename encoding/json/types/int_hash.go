@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"reflect"
 	"strconv"
 	"strings"
 )
@@ -17,24 +18,35 @@ type IntHash struct {
 	hash       string
 }
 
-func ParseIntHash(s string) (*IntHash, error) {
-	if s == "" {
-		return &IntHash{}, nil
-	}
-
-	idx := strings.IndexRune(s, '$')
-	switch {
-	case idx <= 0:
-		return nil, errors.New("missing generation")
-	case idx == len(s)-1:
-		return nil, errors.New("missing hash")
-	default:
-		i, err := strconv.ParseInt(s[:idx], 10, 64)
-		if err != nil {
-			return nil, err
+func ParseIntHash(v interface{}) (*IntHash, error) {
+	switch m := v.(type) {
+	case int:
+		return &IntHash{generation: int64(m)}, nil
+	case int64:
+		return &IntHash{generation: m}, nil
+	case *IntHash:
+		return m, nil
+	case string:
+		if m == "" {
+			return &IntHash{}, nil
 		}
-		h := s[idx+1:]
-		return &IntHash{generation: i, hash: h}, nil
+
+		idx := strings.IndexRune(m, '$')
+		switch {
+		case idx <= 0:
+			return nil, errors.New("missing generation")
+		case idx == len(m)-1:
+			return nil, errors.New("missing hash")
+		default:
+			i, err := strconv.ParseInt(m[:idx], 10, 64)
+			if err != nil {
+				return nil, err
+			}
+			h := m[idx+1:]
+			return &IntHash{generation: i, hash: h}, nil
+		}
+	default:
+		return nil, fmt.Errorf("failed to parse type %s into IntHash", reflect.TypeOf(v).String())
 	}
 }
 
