@@ -94,6 +94,15 @@ func (m *IntHash) DeepCopyInto(out *IntHash) {
 	*out = *m
 }
 
+func (in *IntHash) DeepCopy() *IntHash {
+	if in == nil {
+		return nil
+	}
+	out := new(IntHash)
+	in.DeepCopyInto(out)
+	return out
+}
+
 func (m IntHash) String() string {
 	return fmt.Sprintf(`%d$%s`, m.generation, m.hash)
 }
