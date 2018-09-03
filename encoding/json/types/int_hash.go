@@ -66,6 +66,14 @@ func (m IntHash) Hash() string {
 	return m.hash
 }
 
+// IsZero returns true if the value is nil or time is zero.
+func (m *IntHash) IsZero() bool {
+	if m == nil {
+		return true
+	}
+	return m.generation == 0 && m.hash == ""
+}
+
 func (m *IntHash) Equal(u *IntHash) bool {
 	if m == nil {
 		return u == nil
@@ -80,6 +88,10 @@ func (m *IntHash) Equal(u *IntHash) bool {
 		return m.hash == u.hash
 	}
 	return false
+}
+
+func (m *IntHash) DeepCopyInto(out *IntHash) {
+	*out = *m
 }
 
 func (m IntHash) String() string {
@@ -124,4 +136,23 @@ func (m *IntHash) UnmarshalJSON(data []byte) error {
 	}
 	m.generation = i
 	return nil
+}
+
+// OpenAPISchemaType is used by the kube-openapi generator when constructing
+// the OpenAPI spec of this type.
+//
+// See: https://github.com/kubernetes/kube-openapi/tree/master/pkg/generators
+func (m IntHash) OpenAPISchemaType() []string { return []string{"string"} }
+
+// OpenAPISchemaFormat is used by the kube-openapi generator when constructing
+// the OpenAPI spec of this type.
+func (m IntHash) OpenAPISchemaFormat() string { return "" }
+
+// MarshalQueryParameter converts to a URL query parameter value
+func (m IntHash) MarshalQueryParameter() (string, error) {
+	if m.IsZero() {
+		// Encode unset/nil objects as an empty string
+		return "", nil
+	}
+	return m.String(), nil
 }
