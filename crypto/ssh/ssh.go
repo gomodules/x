@@ -80,6 +80,10 @@ func newClient(dialer sshDialer, user, host string, signer ssh.Signer, retry boo
 	config := &ssh.ClientConfig{
 		User: user,
 		Auth: []ssh.AuthMethod{ssh.PublicKeys(signer)},
+		// Warning: It allows to accept any host key
+		// Note:    InsecureIgnoreHostKey returns a function that can be used for ClientConfig.HostKeyCallback to accept any host key.
+		// TODO:    Accept only valid host key
+		HostKeyCallback: ssh.InsecureIgnoreHostKey(),
 	}
 	client, err := dialer.Dial("tcp", host, config)
 	if err != nil && retry {
