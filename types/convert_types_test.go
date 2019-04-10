@@ -224,6 +224,77 @@ func TestIntPMap(t *testing.T) {
 	}
 }
 
+var testCasesUIntPSlice = [][]uint{
+	{1, 2, 3, 4},
+}
+
+func TestUIntPSlice(t *testing.T) {
+	for idx, in := range testCasesUIntPSlice {
+		if in == nil {
+			continue
+		}
+		out := UIntPSlice(in)
+		assert.Len(t, out, len(in), "Unexpected len at idx %d", idx)
+		for i := range out {
+			assert.Equal(t, in[i], *(out[i]), "Unexpected value at idx %d", idx)
+		}
+
+		out2 := UIntSlice(out)
+		assert.Len(t, out2, len(in), "Unexpected len at idx %d", idx)
+		assert.Equal(t, in, out2, "Unexpected value at idx %d", idx)
+	}
+}
+
+var testCasesUIntSlice = [][]*uint{}
+
+func TestUIntSlice(t *testing.T) {
+	for idx, in := range testCasesUIntSlice {
+		if in == nil {
+			continue
+		}
+		out := UIntSlice(in)
+		assert.Len(t, out, len(in), "Unexpected len at idx %d", idx)
+		for i := range out {
+			if in[i] == nil {
+				assert.Empty(t, out[i], "Unexpected value at idx %d", idx)
+			} else {
+				assert.Equal(t, *(in[i]), out[i], "Unexpected value at idx %d", idx)
+			}
+		}
+
+		out2 := UIntPSlice(out)
+		assert.Len(t, out2, len(in), "Unexpected len at idx %d", idx)
+		for i := range out2 {
+			if in[i] == nil {
+				assert.Empty(t, *(out2[i]), "Unexpected value at idx %d", idx)
+			} else {
+				assert.Equal(t, in[i], out2[i], "Unexpected value at idx %d", idx)
+			}
+		}
+	}
+}
+
+var testCasesUIntPMap = []map[string]uint{
+	{"a": 3, "b": 2, "c": 1},
+}
+
+func TestUIntPMap(t *testing.T) {
+	for idx, in := range testCasesUIntPMap {
+		if in == nil {
+			continue
+		}
+		out := UIntPMap(in)
+		assert.Len(t, out, len(in), "Unexpected len at idx %d", idx)
+		for i := range out {
+			assert.Equal(t, in[i], *(out[i]), "Unexpected value at idx %d", idx)
+		}
+
+		out2 := UIntMap(out)
+		assert.Len(t, out2, len(in), "Unexpected len at idx %d", idx)
+		assert.Equal(t, in, out2, "Unexpected value at idx %d", idx)
+	}
+}
+
 var testCasesInt32PSlice = [][]int32{
 	{1, 2, 3, 4},
 }
