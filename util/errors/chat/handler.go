@@ -3,9 +3,9 @@ package chat
 import (
 	"fmt"
 
-	"github.com/appscode/go-notify"
 	utilerrors "github.com/appscode/go/util/errors"
 	"github.com/pkg/errors"
+	"gomodules.xyz/notify"
 )
 
 // messenger sends chat via notifier in case of errors.

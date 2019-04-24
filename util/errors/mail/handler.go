@@ -6,9 +6,9 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/appscode/go-notify"
 	utilerrors "github.com/appscode/go/util/errors"
 	"github.com/pkg/errors"
+	"gomodules.xyz/notify"
 )
 
 type BodyFunc func(error, errors.StackTrace) (body string, isHTML bool)
