@@ -2,8 +2,6 @@ package version
 
 import (
 	"fmt"
-	"os"
-
 	"github.com/spf13/cobra"
 )
 
@@ -16,10 +14,17 @@ type version struct {
 	GitBranch       string `json:"gitBranch,omitempty"`
 	GitTag          string `json:"gitTag,omitempty"`
 	CommitTimestamp string `json:"commitTimestamp,omitempty"`
-	BuildTimestamp  string `json:"buildTimestamp,omitempty"`
-	BuildHost       string `json:"buildHost,omitempty"`
-	BuildHostOs     string `json:"buildHostOs,omitempty"`
-	BuildHostArch   string `json:"buildHostArch,omitempty"`
+	GoVersion       string `json:"goVersion,omitempty"`
+	Compiler        string `json:"compiler,omitempty"`
+	Platform        string `json:"platform,omitempty"`
+	// Deprecated
+	BuildTimestamp string `json:"buildTimestamp,omitempty"`
+	// Deprecated
+	BuildHost string `json:"buildHost,omitempty"`
+	// Deprecated
+	BuildHostOs string `json:"buildHostOs,omitempty"`
+	// Deprecated
+	BuildHostArch string `json:"buildHostArch,omitempty"`
 }
 
 func (v *version) Print() {
@@ -33,17 +38,14 @@ func (v *version) Print() {
 	fmt.Printf("GitTag = %v\n", v.GitTag)
 	fmt.Printf("CommitTimestamp = %v\n", v.CommitTimestamp)
 
-	if v.BuildTimestamp != "" {
-		fmt.Printf("BuildTimestamp = %v\n", v.BuildTimestamp)
+	if v.GoVersion != "" {
+		fmt.Printf("GoVersion = %v\n", v.GoVersion)
 	}
-	if v.BuildHost != "" {
-		fmt.Printf("BuildHost = %v\n", v.BuildHost)
+	if v.Compiler != "" {
+		fmt.Printf("Compiler = %v\n", v.Compiler)
 	}
-	if v.BuildHostOs != "" {
-		fmt.Printf("BuildHostOs = %v\n", v.BuildHostOs)
-	}
-	if v.BuildHostArch != "" {
-		fmt.Printf("BuildHostArch = %v\n", v.BuildHostArch)
+	if v.Platform != "" {
+		fmt.Printf("Platform = %v\n", v.Platform)
 	}
 }
 
@@ -58,9 +60,9 @@ func NewCmdVersion() *cobra.Command {
 		Run: func(cmd *cobra.Command, args []string) {
 			if short {
 				fmt.Print(Version.Version)
-				os.Exit(0)
+			} else {
+				Version.Print()
 			}
-			Version.Print()
 		},
 	}
 	cmd.Flags().BoolVar(&short, "short", false, "Print just the version number.")
