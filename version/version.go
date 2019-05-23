@@ -8,8 +8,6 @@ import (
 type version struct {
 	Version         string `json:"version,omitempty"`
 	VersionStrategy string `json:"versionStrategy,omitempty"`
-	Os              string `json:"os,omitempty"`
-	Arch            string `json:"arch,omitempty"`
 	CommitHash      string `json:"commitHash,omitempty"`
 	GitBranch       string `json:"gitBranch,omitempty"`
 	GitTag          string `json:"gitTag,omitempty"`
@@ -17,6 +15,10 @@ type version struct {
 	GoVersion       string `json:"goVersion,omitempty"`
 	Compiler        string `json:"compiler,omitempty"`
 	Platform        string `json:"platform,omitempty"`
+	// Deprecated
+	Os string `json:"os,omitempty"`
+	// Deprecated
+	Arch string `json:"arch,omitempty"`
 	// Deprecated
 	BuildTimestamp string `json:"buildTimestamp,omitempty"`
 	// Deprecated
@@ -30,12 +32,9 @@ type version struct {
 func (v *version) Print() {
 	fmt.Printf("Version = %v\n", v.Version)
 	fmt.Printf("VersionStrategy = %v\n", v.VersionStrategy)
-	fmt.Printf("Os = %v\n", v.Os)
-	fmt.Printf("Arch = %v\n", v.Arch)
-
-	fmt.Printf("CommitHash = %v\n", v.CommitHash)
-	fmt.Printf("GitBranch = %v\n", v.GitBranch)
 	fmt.Printf("GitTag = %v\n", v.GitTag)
+	fmt.Printf("GitBranch = %v\n", v.GitBranch)
+	fmt.Printf("CommitHash = %v\n", v.CommitHash)
 	fmt.Printf("CommitTimestamp = %v\n", v.CommitTimestamp)
 
 	if v.GoVersion != "" {
