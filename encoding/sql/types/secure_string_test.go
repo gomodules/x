@@ -16,7 +16,7 @@ type Credential struct {
 	Data types.SecureString `xorm:"text"`
 }
 
-func main() {
+func ExampleSecureString() {
 	Orm, err := newPGEngine("postgres", "postgres", "127.0.0.1", 5432, "postgres")
 	if err != nil {
 		fmt.Println(err)
