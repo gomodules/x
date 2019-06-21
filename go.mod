@@ -9,7 +9,7 @@ require (
 	github.com/fatih/color v1.7.0
 	github.com/flosch/pongo2 v0.0.0-20181225140029-79872a7b2769
 	github.com/fsnotify/fsnotify v1.4.7
-	github.com/go-xorm/xorm v0.7.1
+	github.com/go-xorm/xorm v0.7.3
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
 	github.com/golang/protobuf v1.3.1
 	github.com/google/go-querystring v1.0.0
