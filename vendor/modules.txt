@@ -70,6 +70,8 @@ golang.org/x/net/internal/socket
 golang.org/x/sys/unix
 golang.org/x/sys/cpu
 golang.org/x/sys/windows
+# gomodules.xyz/version v0.1.0
+gomodules.xyz/version
 # gopkg.in/yaml.v2 v2.2.2
 gopkg.in/yaml.v2
 # sigs.k8s.io/yaml v1.1.0
