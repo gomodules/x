@@ -10,8 +10,6 @@ github.com/codeskyblue/go-sh
 github.com/davecgh/go-spew/spew
 # github.com/fatih/color v1.7.0
 github.com/fatih/color
-# github.com/flosch/pongo2 v0.0.0-20181225140029-79872a7b2769
-github.com/flosch/pongo2
 # github.com/fsnotify/fsnotify v1.4.7
 github.com/fsnotify/fsnotify
 # github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
@@ -30,8 +28,6 @@ github.com/howeyc/gopass
 github.com/inconshreveable/mousetrap
 # github.com/json-iterator/go v1.1.6
 github.com/json-iterator/go
-# github.com/juju/errors v0.0.0-20181118221551-089d3ea4e4d5
-github.com/juju/errors
 # github.com/mattn/go-colorable v0.1.2
 github.com/mattn/go-colorable
 # github.com/mattn/go-isatty v0.0.8
@@ -53,22 +49,22 @@ github.com/spf13/pflag
 # github.com/stretchr/testify v1.3.0
 github.com/stretchr/testify/assert
 # golang.org/x/crypto v0.0.0-20190422183909-d864b10871cd
-golang.org/x/crypto/ssh
 golang.org/x/crypto/curve25519
 golang.org/x/crypto/ed25519
-golang.org/x/crypto/internal/chacha20
-golang.org/x/crypto/poly1305
-golang.org/x/crypto/ssh/terminal
 golang.org/x/crypto/ed25519/internal/edwards25519
+golang.org/x/crypto/internal/chacha20
 golang.org/x/crypto/internal/subtle
+golang.org/x/crypto/poly1305
+golang.org/x/crypto/ssh
+golang.org/x/crypto/ssh/terminal
 # golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3
-golang.org/x/net/ipv4
 golang.org/x/net/bpf
 golang.org/x/net/internal/iana
 golang.org/x/net/internal/socket
+golang.org/x/net/ipv4
 # golang.org/x/sys v0.0.0-20190412213103-97732733099d
-golang.org/x/sys/unix
 golang.org/x/sys/cpu
+golang.org/x/sys/unix
 golang.org/x/sys/windows
 # gomodules.xyz/version v0.1.0
 gomodules.xyz/version
