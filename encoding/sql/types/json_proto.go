@@ -54,3 +54,11 @@ func NewJsonpb(pb proto.Message) (JsonProto, error) {
 	}
 	return JsonProto([]byte(s)), nil
 }
+
+func MustJsonpb(pb proto.Message) JsonProto {
+	out, err := NewJsonpb(pb)
+	if err != nil {
+		panic(err)
+	}
+	return out
+}
