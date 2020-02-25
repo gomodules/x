@@ -50,3 +50,11 @@ func NewJsonObj(v interface{}) (JsonObj, error) {
 	}
 	return JsonObj(b), nil
 }
+
+func MustJsonObj(v interface{}) JsonObj {
+	out, err := NewJsonObj(v)
+	if err != nil {
+		panic(err)
+	}
+	return out
+}

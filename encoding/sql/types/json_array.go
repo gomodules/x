@@ -50,3 +50,11 @@ func NewJsonArr(v interface{}) (JsonArr, error) {
 	}
 	return JsonArr(b), nil
 }
+
+func MustJsonArr(v interface{}) JsonArr {
+	out, err := NewJsonArr(v)
+	if err != nil {
+		panic(err)
+	}
+	return out
+}
