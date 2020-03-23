@@ -24,6 +24,8 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
+// ref: https://github.com/kubernetes/apimachinery/blob/48159c651603a061d16fa1dbab2cfe32eceba27a/pkg/apis/meta/v1/unstructured/helpers.go
+
 // NestedFieldCopy returns a deep copy of the value of a nested field.
 // Returns false if the value is missing.
 // No error is returned for a nil field.
@@ -377,7 +379,7 @@ func DeepCopyYAMLValue(x interface{}) interface{} {
 			clone[i] = DeepCopyYAMLValue(v)
 		}
 		return clone
-	case string, int64, bool, float64, nil, json.Number:
+	case string, int8, uint8, int16, uint16, int32, uint32, int64, uint64, int, uint, float32, float64, bool, nil, json.Number:
 		return x
 	default:
 		panic(fmt.Errorf("cannot deep copy %T", x))
