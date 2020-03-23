@@ -27,6 +27,6 @@ require (
 	golang.org/x/crypto v0.0.0-20190422183909-d864b10871cd
 	golang.org/x/sync v0.0.0-20190423024810-112230192c58 // indirect
 	gomodules.xyz/version v0.1.0
-	gopkg.in/yaml.v2 v2.2.2 // indirect
+	gopkg.in/yaml.v2 v2.2.2
 	sigs.k8s.io/yaml v1.1.0
 )
