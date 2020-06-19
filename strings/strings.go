@@ -83,6 +83,10 @@ func Join(a []*string, sep string) string {
 	return strings.Join(b, sep)
 }
 
+func JoinVariadic(sep string, a ...string) string {
+	return strings.Join(a, sep)
+}
+
 func EqualSlice(a, b []string) bool {
 	if a == nil && b == nil {
 		return true

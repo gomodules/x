@@ -36,3 +36,8 @@ func TestEqualSlice(t *testing.T) {
 	b = []string{"bar", "foo", "foo"}
 	assert.False(t, EqualSlice(a, b))
 }
+
+func TestJoinVariadic(t *testing.T) {
+	a := JoinVariadic(",", "foo", "bar")
+	assert.Equal(t, "foo,bar", a)
+}
