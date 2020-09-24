@@ -66,6 +66,8 @@ golang.org/x/net/ipv4
 golang.org/x/sys/cpu
 golang.org/x/sys/unix
 golang.org/x/sys/windows
+# gomodules.xyz/password-generator v0.2.3
+gomodules.xyz/password-generator
 # gomodules.xyz/version v0.1.0
 gomodules.xyz/version
 # gopkg.in/yaml.v2 v2.2.2
