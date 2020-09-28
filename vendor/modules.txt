@@ -1,10 +1,10 @@
-# github.com/beevik/ntp v0.2.0
+# github.com/beevik/ntp v0.3.0
 github.com/beevik/ntp
 # github.com/cenkalti/backoff v2.1.1+incompatible
 github.com/cenkalti/backoff
 # github.com/codegangsta/inject v0.0.0-20150114235600-33e0aa1cb7c0
 github.com/codegangsta/inject
-# github.com/codeskyblue/go-sh v0.0.0-20190412065543-76bd3d59ff27
+# github.com/codeskyblue/go-sh v0.0.0-20200712050446-30169cf553fe
 github.com/codeskyblue/go-sh
 # github.com/davecgh/go-spew v1.1.0
 github.com/davecgh/go-spew/spew
