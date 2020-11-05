@@ -18,7 +18,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cobra v1.1.1
 	github.com/spf13/pflag v1.0.5
-	github.com/stretchr/testify v1.6.1
+	github.com/stretchr/testify v1.5.1
 	gomodules.xyz/homedir v0.0.0-20201104190528-bcd4d5d94b84
 	gomodules.xyz/password-generator v0.2.6
 	gomodules.xyz/pointer v0.0.0-20201105040656-991dd254b680
