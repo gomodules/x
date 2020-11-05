@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/appscode/go.svg?branch=master)](https://travis-ci.org/appscode/go)
-[![Go Report Card](https://goreportcard.com/badge/appscode/go "Go Report Card")](https://goreportcard.com/report/appscode/go)
-[![GoDoc](https://godoc.org/github.com/appscode/go?status.svg "GoDoc")](https://godoc.org/github.com/appscode/go)
+![CI](https://github.com/gomodules/x/workflows/CI/badge.svg)
+[![Go Report Card](https://goreportcard.com/badge/gomodules.xyz/x)](https://goreportcard.com/report/gomodules.xyz/x)
+[![PkgGoDev](https://pkg.go.dev/badge/gomodules.xyz/x)](https://pkg.go.dev/gomodules.xyz/x)
 
 # go
 Ensemble of GOlang libraries used by AppsCode
@@ -13,4 +13,5 @@ Ensemble of GOlang libraries used by AppsCode
  * If we want external contribution, those stuff need their own repo.
 
 ## License
+
 This is licensed under Apache 2.0 unless specified otherwise in individual code files.
