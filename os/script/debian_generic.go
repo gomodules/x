@@ -5,8 +5,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/appscode/go/os/repos"
-	"github.com/appscode/go/strings"
+	"gomodules.xyz/x/os/repos"
+	"gomodules.xyz/x/strings"
 )
 
 type DebianGeneric struct {

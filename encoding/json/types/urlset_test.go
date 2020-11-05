@@ -3,9 +3,9 @@ package types_test
 import (
 	"testing"
 
-	. "github.com/appscode/go/encoding/json/types"
-	"github.com/appscode/go/sets"
 	"github.com/stretchr/testify/assert"
+	"gomodules.xyz/sets"
+	. "gomodules.xyz/x/encoding/json/types"
 )
 
 func TestURLSet_MarshalJSON_Nil(t *testing.T) {

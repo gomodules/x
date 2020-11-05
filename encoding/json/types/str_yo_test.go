@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"testing"
 
-	. "github.com/appscode/go/encoding/json/types"
-	"github.com/json-iterator/go"
+	jsoniter "github.com/json-iterator/go"
 	"github.com/stretchr/testify/assert"
+	. "gomodules.xyz/x/encoding/json/types"
 )
 
 func TestStrYo(t *testing.T) {

@@ -3,8 +3,8 @@ package types_test
 import (
 	"testing"
 
-	. "github.com/appscode/go/encoding/json/types"
 	"github.com/stretchr/testify/assert"
+	. "gomodules.xyz/x/encoding/json/types"
 )
 
 func TestURLMap_MarshalJSON_Nil(t *testing.T) {

@@ -4,8 +4,8 @@ import (
 	"flag"
 	"testing"
 
-	alog "github.com/appscode/go/log"
 	"github.com/golang/glog"
+	alog "gomodules.xyz/x/log"
 )
 
 func init() {

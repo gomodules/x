@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	. "github.com/appscode/go/encoding/json/types"
 	"github.com/stretchr/testify/assert"
+	. "gomodules.xyz/x/encoding/json/types"
 )
 
 func TestIntHash_Empty(t *testing.T) {

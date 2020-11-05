@@ -1,4 +1,4 @@
-package json
+package j2
 
 import (
 	"encoding/json"

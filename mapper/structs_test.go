@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/appscode/go/types/mapper"
+	"gomodules.xyz/x/mapper"
 )
 
 type testA struct {

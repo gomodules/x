@@ -1,12 +1,12 @@
-package json_test
+package j2_test
 
 import (
 	"encoding/json"
 	"errors"
 	"testing"
 
-	. "github.com/appscode/go/encoding/json"
 	"github.com/stretchr/testify/assert"
+	. "gomodules.xyz/x/encoding/json"
 )
 
 var (

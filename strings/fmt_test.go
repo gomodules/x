@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	. "github.com/appscode/go/strings"
+	. "gomodules.xyz/x/strings"
 )
 
 const testStr = `

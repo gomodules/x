@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/appscode/go/env"
 	"github.com/fatih/color"
 	"github.com/pkg/errors"
+	"gomodules.xyz/x/env"
 )
 
 func Print(args ...interface{}) {

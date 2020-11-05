@@ -1,6 +1,6 @@
 package term
 
-import _env "github.com/appscode/go/env"
+import _env "gomodules.xyz/x/env"
 
 var Interactive = true
 

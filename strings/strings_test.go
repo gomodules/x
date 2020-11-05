@@ -3,8 +3,8 @@ package strings_test
 import (
 	"testing"
 
-	. "github.com/appscode/go/strings"
 	"github.com/stretchr/testify/assert"
+	. "gomodules.xyz/x/strings"
 )
 
 func TestIsBothAlphaNum(t *testing.T) {

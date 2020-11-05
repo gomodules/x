@@ -1,8 +1,8 @@
 package script
 
 import (
-	"github.com/appscode/go/os/repos"
-	"github.com/appscode/go/strings"
+	"gomodules.xyz/x/os/repos"
+	"gomodules.xyz/x/strings"
 )
 
 type UbuntuGeneric struct {

@@ -4,8 +4,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/appscode/go/env"
 	"github.com/stretchr/testify/assert"
+	"gomodules.xyz/x/env"
 )
 
 func TestDetectFromHostProd(t *testing.T) {

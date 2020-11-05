@@ -10,7 +10,7 @@ import (
 
 	"bytes"
 
-	"github.com/appscode/go/sets"
+	"gomodules.xyz/sets"
 )
 
 type URLSet struct {

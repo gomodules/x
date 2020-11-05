@@ -3,8 +3,8 @@ package arrays_test
 import (
 	"testing"
 
-	. "github.com/appscode/go/arrays"
 	"github.com/stretchr/testify/assert"
+	. "gomodules.xyz/x/arrays"
 )
 
 func TestReverse(t *testing.T) {
