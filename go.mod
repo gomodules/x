@@ -25,5 +25,6 @@ require (
 	gomodules.xyz/sets v0.0.0-20200930152147-4f4543544799
 	gomodules.xyz/version v0.1.0
 	gopkg.in/yaml.v2 v2.2.8
+	k8s.io/klog/v2 v2.8.0
 	sigs.k8s.io/yaml v1.1.0
 )

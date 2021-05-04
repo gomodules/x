@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"net/http/httputil"
 
-	"github.com/golang/glog"
+	"k8s.io/klog/v2"
 	"github.com/moul/http2curl"
 )
 
@@ -20,14 +20,14 @@ type logTransport struct {
 }
 
 func (t *logTransport) RoundTrip(request *http.Request) (*http.Response, error) {
-	if glog.V(8) {
+	if klog.V(8).Enabled() {
 		cmd, _ := http2curl.GetCurlCommand(request)
-		glog.Infoln("request:", cmd)
+		klog.Infoln("request:", cmd)
 	}
 	resp, err := t.Transport.RoundTrip(request)
-	if glog.V(8) && err == nil {
-		if out, err := httputil.DumpResponse(resp, bool(glog.V(10))); err == nil {
-			glog.V(8).Infoln("response:", string(out))
+	if klog.V(8).Enabled() && err == nil {
+		if out, err := httputil.DumpResponse(resp, bool(klog.V(10))); err == nil {
+			klog.V(8).Infoln("response:", string(out))
 		}
 	}
 	return resp, err
