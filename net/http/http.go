@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"net/http/httputil"
 
-	"k8s.io/klog/v2"
 	"github.com/moul/http2curl"
+	"k8s.io/klog/v2"
 )
 
 // LogTransport logs http request and response at glog level 8. At level 10,
@@ -26,7 +26,7 @@ func (t *logTransport) RoundTrip(request *http.Request) (*http.Response, error) 
 	}
 	resp, err := t.Transport.RoundTrip(request)
 	if klog.V(8).Enabled() && err == nil {
-		if out, err := httputil.DumpResponse(resp, bool(klog.V(10))); err == nil {
+		if out, err := httputil.DumpResponse(resp, klog.V(10).Enabled()); err == nil {
 			klog.V(8).Infoln("response:", string(out))
 		}
 	}
