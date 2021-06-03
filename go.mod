@@ -3,6 +3,7 @@ module gomodules.xyz/x
 go 1.12
 
 require (
+	github.com/Masterminds/semver/v3 v3.1.1
 	github.com/beevik/ntp v0.3.0
 	github.com/cenkalti/backoff v2.2.1+incompatible
 	github.com/codeskyblue/go-sh v0.0.0-20200712050446-30169cf553fe
@@ -21,7 +22,6 @@ require (
 	gomodules.xyz/password-generator v0.2.6
 	gomodules.xyz/pointer v0.0.0-20201105040656-991dd254b680
 	gomodules.xyz/sets v0.0.0-20200930152147-4f4543544799
-	gomodules.xyz/version v0.1.0
 	gopkg.in/yaml.v2 v2.2.8
 	k8s.io/klog/v2 v2.8.0
 	sigs.k8s.io/yaml v1.1.0

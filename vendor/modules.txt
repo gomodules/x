@@ -1,3 +1,5 @@
+# github.com/Masterminds/semver/v3 v3.1.1
+github.com/Masterminds/semver/v3
 # github.com/beevik/ntp v0.3.0
 github.com/beevik/ntp
 # github.com/cenkalti/backoff v2.2.1+incompatible
@@ -65,8 +67,6 @@ gomodules.xyz/password-generator
 gomodules.xyz/pointer
 # gomodules.xyz/sets v0.0.0-20200930152147-4f4543544799
 gomodules.xyz/sets
-# gomodules.xyz/version v0.1.0
-gomodules.xyz/version
 # google.golang.org/protobuf v1.23.0
 google.golang.org/protobuf/encoding/protojson
 google.golang.org/protobuf/encoding/prototext
