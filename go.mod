@@ -19,9 +19,9 @@ require (
 	github.com/spf13/cobra v1.1.1
 	github.com/stretchr/testify v1.5.1
 	gomodules.xyz/homedir v0.0.0-20201104190528-bcd4d5d94b84
-	gomodules.xyz/password-generator v0.2.6
-	gomodules.xyz/pointer v0.0.0-20201105040656-991dd254b680
-	gomodules.xyz/sets v0.0.0-20200930152147-4f4543544799
+	gomodules.xyz/password-generator v0.2.7
+	gomodules.xyz/pointer v0.1.0
+	gomodules.xyz/sets v0.1.0
 	gopkg.in/yaml.v2 v2.2.8
 	k8s.io/klog/v2 v2.8.0
 	sigs.k8s.io/yaml v1.1.0

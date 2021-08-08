@@ -61,11 +61,11 @@ golang.org/x/sys/unix
 golang.org/x/sys/windows
 # gomodules.xyz/homedir v0.0.0-20201104190528-bcd4d5d94b84
 gomodules.xyz/homedir
-# gomodules.xyz/password-generator v0.2.6
+# gomodules.xyz/password-generator v0.2.7
 gomodules.xyz/password-generator
-# gomodules.xyz/pointer v0.0.0-20201105040656-991dd254b680
+# gomodules.xyz/pointer v0.1.0
 gomodules.xyz/pointer
-# gomodules.xyz/sets v0.0.0-20200930152147-4f4543544799
+# gomodules.xyz/sets v0.1.0
 gomodules.xyz/sets
 # google.golang.org/protobuf v1.23.0
 google.golang.org/protobuf/encoding/protojson
