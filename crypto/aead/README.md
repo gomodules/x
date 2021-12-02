@@ -2,7 +2,12 @@
    AESGCM
    - AES 256 for encryption
    - SHA 256 for HMAC/authentication
-            
+
+  chacha20poly1305
+   - Alternative to AES-GCM256 is https://pkg.go.dev/golang.org/x/crypto/chacha20poly1305
+   - chacha20poly1305 is faster
+   - https://medium.com/asecuritysite-when-bob-met-alice/go-and-chacha-6645684e7d
+
 # Process:
    Encryption   
     - encrypt the data using aes.  
