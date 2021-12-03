@@ -53,7 +53,7 @@ func TestAdjustForWeekend(t *testing.T) {
 				now: time.Date(2021, 12, 3, 10, 0, 0, 0, time.UTC),
 				adj: Before,
 			},
-			want: time.Date(2021, 12, 3, 10, 0, 0, 0, time.UTC),
+			want: time.Date(2021, 12, 2, 10, 0, 0, 0, time.UTC),
 		},
 		{
 			name: "Friday-After",
@@ -61,7 +61,7 @@ func TestAdjustForWeekend(t *testing.T) {
 				now: time.Date(2021, 12, 3, 10, 0, 0, 0, time.UTC),
 				adj: After,
 			},
-			want: time.Date(2021, 12, 3, 10, 0, 0, 0, time.UTC),
+			want: time.Date(2021, 12, 6, 10, 0, 0, 0, time.UTC),
 		},
 		{
 			name: "Saturday-NoChange",
@@ -77,7 +77,7 @@ func TestAdjustForWeekend(t *testing.T) {
 				now: time.Date(2021, 12, 4, 10, 0, 0, 0, time.UTC),
 				adj: Before,
 			},
-			want: time.Date(2021, 12, 3, 10, 0, 0, 0, time.UTC),
+			want: time.Date(2021, 12, 2, 10, 0, 0, 0, time.UTC),
 		},
 		{
 			name: "Saturday-After",
@@ -101,7 +101,7 @@ func TestAdjustForWeekend(t *testing.T) {
 				now: time.Date(2021, 12, 5, 10, 0, 0, 0, time.UTC),
 				adj: Before,
 			},
-			want: time.Date(2021, 12, 3, 10, 0, 0, 0, time.UTC),
+			want: time.Date(2021, 12, 2, 10, 0, 0, 0, time.UTC),
 		},
 		{
 			name: "Sunday-After",
@@ -114,8 +114,14 @@ func TestAdjustForWeekend(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := AdjustForWeekend(tt.args.now, tt.args.adj); !got.Equal(tt.want) {
+			got := AdjustForWeekend(tt.args.now, tt.args.adj)
+			if !got.Equal(tt.want) {
 				t.Errorf("AdjustForWeekend() = %v, want %v", got, tt.want)
+			}
+			if tt.args.adj != NoChange {
+				if got.Weekday() == time.Friday || got.Weekday() == time.Saturday || got.Weekday() == time.Sunday {
+					t.Errorf("AdjustForWeekend() returns %s, wanted %v weekend", got.Weekday(), tt.args.adj)
+				}
 			}
 		})
 	}
