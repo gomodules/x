@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	triggerFile = "trigger"
+	TriggerFile = "trigger"
 )
 
 type Reloader struct {
@@ -38,7 +38,7 @@ func (r *Reloader) FS() iofs.FS {
 }
 
 func (r *Reloader) needsReload(fsys iofs.FS) bool {
-	if data, err := iofs.ReadFile(fsys, triggerFile); err == nil {
+	if data, err := iofs.ReadFile(fsys, TriggerFile); err == nil {
 		yes := bytes.Compare(r.trigger, data) != 0
 		r.trigger = data
 		return yes
