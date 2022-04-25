@@ -38,9 +38,7 @@ var DebianRepos map[string]DebianRepo = map[string]DebianRepo{
 	},
 }
 
-var (
-	DefaultSaltstackVersion = map[string]string{
-		"debian": "saltstack-2016.11.1-debian-8",
-		"ubuntu": "saltstack-2016.11.1-ubuntu-16.04",
-	}
-)
+var DefaultSaltstackVersion = map[string]string{
+	"debian": "saltstack-2016.11.1-debian-8",
+	"ubuntu": "saltstack-2016.11.1-ubuntu-16.04",
+}

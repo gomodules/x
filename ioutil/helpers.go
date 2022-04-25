@@ -78,7 +78,6 @@ func WriteJson(path string, obj interface{}) error {
 func WriteString(path string, data string) bool {
 	EnsureDirectory(path)
 	err := ioutil.WriteFile(path, []byte(data), os.ModePerm)
-
 	if err != nil {
 		return false
 	}
@@ -90,7 +89,7 @@ func AppendToFile(path string, values string) error {
 	if _, err := os.Stat(path); err != nil {
 		ioutil.WriteFile(path, []byte(""), os.ModePerm)
 	}
-	f, err := os.OpenFile(path, os.O_APPEND|os.O_WRONLY, 0666)
+	f, err := os.OpenFile(path, os.O_APPEND|os.O_WRONLY, 0o666)
 	if err != nil {
 		return err
 	}

@@ -111,7 +111,6 @@ func (n *mapper) assign(useFieldName bool) {
 						n.to.FieldByName(setterName).Set(iValue)
 					}
 				}
-
 			}
 		}
 	}

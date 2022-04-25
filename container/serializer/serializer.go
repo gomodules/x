@@ -43,7 +43,7 @@ func (s *serializedQueue) Len() int {
 func (s *serializedQueue) Iterator() *iterator {
 	c := &serializer{}
 	*c = append(*c, *s.serializer...)
-	//heap.Init(c)
+	// heap.Init(c)
 	return &iterator{c}
 }
 

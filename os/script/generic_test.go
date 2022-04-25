@@ -25,5 +25,5 @@ func TestUserExists(t *testing.T) {
 		//}
 		//errorutil.EOE(err)
 	}
-	//return true
+	// return true
 }

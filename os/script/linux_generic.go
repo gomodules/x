@@ -46,7 +46,7 @@ func (script *LinuxGeneric) Raw() interface{} {
 }
 
 func (script *LinuxGeneric) Mkdir(path string) {
-	if err := os.MkdirAll(path, 0777); err != nil {
+	if err := os.MkdirAll(path, 0o777); err != nil {
 		log.Fatal(err)
 	}
 }
@@ -100,7 +100,7 @@ func (script *LinuxGeneric) UserExists(u string) bool {
 }
 
 func (script *LinuxGeneric) AddLine(file string, line string) {
-	f, err := os.OpenFile(file, os.O_RDWR|os.O_APPEND|os.O_CREATE, 0600)
+	f, err := os.OpenFile(file, os.O_RDWR|os.O_APPEND|os.O_CREATE, 0o600)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -132,7 +132,7 @@ func (script *LinuxGeneric) UncommentLine(file string, regex string) {
 			content += "\n"
 		}
 	}
-	ioutil.WriteFile(file, []byte(content), 0600)
+	ioutil.WriteFile(file, []byte(content), 0o600)
 }
 
 func (script *LinuxGeneric) CheckPathExists(path string) {
@@ -151,15 +151,15 @@ func (script *LinuxGeneric) WriteBase64String(filename string, data string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	ioutil.WriteFile(filename, bytes, 0600)
+	ioutil.WriteFile(filename, bytes, 0o600)
 }
 
 func (script *LinuxGeneric) WriteString(filename string, data string) {
-	ioutil.WriteFile(filename, []byte(data), 0600)
+	ioutil.WriteFile(filename, []byte(data), 0o600)
 }
 
 func (script *LinuxGeneric) WriteBytes(filename string, data []byte) {
-	ioutil.WriteFile(filename, data, 0600)
+	ioutil.WriteFile(filename, data, 0o600)
 }
 
 func (script *LinuxGeneric) ProcessExists(ps string) bool {
