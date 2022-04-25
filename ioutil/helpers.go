@@ -3,7 +3,9 @@ package ioutil
 import (
 	"bufio"
 	"encoding/json"
+	"errors"
 	"io"
+	"io/fs"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -109,12 +111,14 @@ func EnsureDirectory(path string) error {
 	return nil
 }
 
-func IsFileExists(path string) bool {
-	EnsureDirectory(path)
-	if _, err := os.Stat(path); err != nil {
-		return false
-	}
-	return true
+func PathExists(path string) bool {
+	_, err := os.Stat(path)
+	return err == nil
+}
+
+func PathNotExists(path string) bool {
+	_, err := os.Stat(path)
+	return errors.Is(err, fs.ErrNotExist)
 }
 
 // WriteFile writes the contents from src to dst using io.Copy.
