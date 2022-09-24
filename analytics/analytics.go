@@ -1,7 +1,6 @@
 package analytics
 
 import (
-	"io/ioutil"
 	"os"
 	"path/filepath"
 

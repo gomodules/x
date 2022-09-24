@@ -3,7 +3,7 @@ package net
 import (
 	"bytes"
 	"errors"
-	"io/ioutil"
+	"io"
 	"net"
 	"net/http"
 	"regexp"

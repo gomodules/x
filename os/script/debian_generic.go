@@ -1,7 +1,6 @@
 package script
 
 import (
-	"io/ioutil"
 	"log"
 	"os"
 
