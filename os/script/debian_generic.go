@@ -22,7 +22,7 @@ func (script *DebianGeneric) ProcessEnable(ps string) {
 func (script *DebianGeneric) ProcessDisable(ps string) {
 	file := "/etc/init/" + ps + ".override"
 	if _, err := os.Stat(file); os.IsNotExist(err) {
-		ioutil.WriteFile(file, []byte("manual"), 0o600)
+		os.WriteFile(file, []byte("manual"), 0o600)
 	}
 
 	// update-rc.d salt-minion disable
@@ -95,7 +95,7 @@ func (script *DebianGeneric) DeactivateDaemons() {
 	content := `#!/bin/sh
 echo "Salt shall not start." >&2
 exit 101`
-	ioutil.WriteFile("/usr/sbin/policy-rc.d", []byte(content), 0o755)
+	os.WriteFile("/usr/sbin/policy-rc.d", []byte(content), 0o755)
 }
 
 func (script *DebianGeneric) ActivateDaemons() {
