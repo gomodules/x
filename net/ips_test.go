@@ -2,7 +2,7 @@ package net
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net"
 	"net/http"
 	"strings"
@@ -12,7 +12,7 @@ import (
 func TestIPInfo(t *testing.T) {
 	if resp, err := http.Get("https://ipinfo.io/ip"); err == nil {
 		defer resp.Body.Close()
-		if bytes, err := ioutil.ReadAll(resp.Body); err == nil {
+		if bytes, err := io.ReadAll(resp.Body); err == nil {
 			fmt.Println(string(bytes))
 			ip := net.ParseIP(strings.TrimSpace(string(bytes)))
 			fmt.Println(ip)

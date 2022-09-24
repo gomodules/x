@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"encoding/base64"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 	"regexp"
@@ -120,7 +119,7 @@ func (script *LinuxGeneric) AddLine(file string, line string) {
 }
 
 func (script *LinuxGeneric) UncommentLine(file string, regex string) {
-	data, err := ioutil.ReadFile(file)
+	data, err := os.ReadFile(file)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -132,7 +131,7 @@ func (script *LinuxGeneric) UncommentLine(file string, regex string) {
 			content += "\n"
 		}
 	}
-	ioutil.WriteFile(file, []byte(content), 0o600)
+	os.WriteFile(file, []byte(content), 0o600)
 }
 
 func (script *LinuxGeneric) CheckPathExists(path string) {
@@ -142,7 +141,7 @@ func (script *LinuxGeneric) CheckPathExists(path string) {
 }
 
 func (script *LinuxGeneric) ReadAsBase64(path string) string {
-	bytes, _ := ioutil.ReadFile(path)
+	bytes, _ := os.ReadFile(path)
 	return base64.StdEncoding.EncodeToString([]byte(string(bytes)))
 }
 
@@ -151,15 +150,15 @@ func (script *LinuxGeneric) WriteBase64String(filename string, data string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	ioutil.WriteFile(filename, bytes, 0o600)
+	os.WriteFile(filename, bytes, 0o600)
 }
 
 func (script *LinuxGeneric) WriteString(filename string, data string) {
-	ioutil.WriteFile(filename, []byte(data), 0o600)
+	os.WriteFile(filename, []byte(data), 0o600)
 }
 
 func (script *LinuxGeneric) WriteBytes(filename string, data []byte) {
-	ioutil.WriteFile(filename, data, 0o600)
+	os.WriteFile(filename, data, 0o600)
 }
 
 func (script *LinuxGeneric) ProcessExists(ps string) bool {
