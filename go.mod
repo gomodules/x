@@ -14,7 +14,7 @@ require (
 	github.com/howeyc/gopass v0.0.0-20210920133722-c8aef6fb66ef
 	github.com/moul/http2curl v1.0.0
 	github.com/pkg/errors v0.9.1
-	github.com/spf13/cobra v1.2.1
+	github.com/spf13/cobra v1.5.0
 	github.com/stretchr/testify v1.8.0
 	gomodules.xyz/homedir v0.1.0
 	gomodules.xyz/password-generator v0.2.7
@@ -24,6 +24,7 @@ require (
 
 require (
 	github.com/google/go-cmp v0.5.9 // indirect
+	github.com/smartystreets/goconvey v1.7.2 // indirect
 	golang.org/x/term v0.5.0 // indirect
 )
 
