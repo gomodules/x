@@ -7,6 +7,7 @@ require (
 	github.com/beevik/ntp v1.0.0
 	github.com/cenkalti/backoff v2.2.1+incompatible
 	github.com/codeskyblue/go-sh v0.0.0-20200712050446-30169cf553fe
+	github.com/cyphar/filepath-securejoin v0.2.3
 	github.com/fatih/color v1.15.0
 	github.com/fsnotify/fsnotify v1.6.0
 	github.com/google/go-querystring v1.1.0
