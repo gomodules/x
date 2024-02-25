@@ -42,7 +42,7 @@ func (w *Watcher) Run(stopCh <-chan struct{}) error {
 				klog.Infoln("file watcher event: --------------------------------------", event)
 
 				filename := filepath.Clean(event.Name)
-				if !fileset.Has(filename) {
+				if fileset.Len() > 0 && !fileset.Has(filename) {
 					continue
 				}
 
