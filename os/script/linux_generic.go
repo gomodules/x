@@ -9,7 +9,7 @@ import (
 	"regexp"
 	"strings"
 
-	sh "github.com/codeskyblue/go-sh"
+	sh "gomodules.xyz/go-sh"
 )
 
 // Linux version must use Systemd as init process
